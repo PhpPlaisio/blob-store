@@ -71,7 +71,7 @@ interface BlobStore
    *
    * @return int
    */
-  public function putFile($cmpId, $path, $filename, $mimeType);
+  public function putFile($cmpId, $path, $filename, $mimeType=null);
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
