@@ -20,7 +20,6 @@ interface BlobStore
   public function delBlob($cmpId, $blbId);
 
   //--------------------------------------------------------------------------------------------------------------------
-
   /**
    * Returns the BLOB and its metadata. The returned array must have the following keys:
    * <ul>
@@ -41,7 +40,6 @@ interface BlobStore
   public function getBlob($cmpId, $blbId);
 
   //--------------------------------------------------------------------------------------------------------------------
-
   /**
    * Returns the metadata of a BLOB. The returned array must have the following keys:
    * <ul>
@@ -62,29 +60,33 @@ interface BlobStore
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Stores a BLOB and returns its ID.
+   * Stores a file as a BLOB and returns the ID of the BLOB.
    *
-   * @param int         $cmpId    The ID of the company.
-   * @param string      $path     The path to the file.
-   * @param string      $filename The filename to be stored with the BLOB.
-   * @param string|null $mimeType The mime type of the BLOB. If null this method will determine the mime type.
+   * @param int         $cmpId     The ID of the company.
+   * @param string      $path      The path to the file (i.e. the actual data).
+   * @param string      $filename  The filename to be stored with the BLOB.
+   * @param string|null $mimeType  The mime type of the BLOB. If null this method will determine the mime type.
+   * @param string|null $timestamp The creation or last modification time of the BLOB. If null the current timestamp
+   *                               will be used.
    *
    * @return int
    */
-  public function putFile($cmpId, $path, $filename, $mimeType=null);
+  public function putFile($cmpId, $path, $filename, $mimeType = null, $timestamp = null);
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Stores a BLOB and returns its ID.
+   * Stores a string as a BLOB and returns the ID of the BLOB.
    *
-   * @param int    $cmpId    The ID of the company.
-   * @param string $filename The filename to be stored with the BLOB.
-   * @param string $mimeType The mime type of the BLOB.
-   * @param string $data     The BLOB (i.e. the actual data).
+   * @param int         $cmpId     The ID of the company.
+   * @param string      $data      The string (i.e. the actual data).
+   * @param string      $filename  The filename to be stored with the BLOB.
+   * @param string      $mimeType  The mime type of the BLOB.
+   * @param string|null $timestamp The creation or last modification time of the BLOB. If null the current timestamp
+   *                               will be used.
    *
    * @return int
    */
-  public function putString($cmpId, $filename, $mimeType, $data);
+  public function putString($cmpId, $data, $filename, $mimeType, $timestamp = null);
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
