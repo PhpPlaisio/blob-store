@@ -16,6 +16,9 @@ interface BlobStore
    * @param int $blbId The ID of the BLOB.
    *
    * @return void
+   *
+   * @api
+   * @since 1.0.0
    */
   public function delBlob($cmpId, $blbId);
 
@@ -36,6 +39,9 @@ interface BlobStore
    * @param int $blbId The ID of the BLOB.
    *
    * @return array
+   *
+   * @api
+   * @since 1.0.0
    */
   public function getBlob($cmpId, $blbId);
 
@@ -55,6 +61,9 @@ interface BlobStore
    * @param int $blbId The ID of the BLOB.
    *
    * @return array
+   *
+   * @api
+   * @since 1.0.0
    */
   public function getMetadata($cmpId, $blbId);
 
@@ -70,6 +79,9 @@ interface BlobStore
    *                               will be used.
    *
    * @return int
+   *
+   * @api
+   * @since 1.0.0
    */
   public function putFile($cmpId, $path, $filename, $mimeType = null, $timestamp = null);
 
@@ -85,6 +97,9 @@ interface BlobStore
    *                               will be used.
    *
    * @return int
+   *
+   * @api
+   * @since 1.0.0
    */
   public function putString($cmpId, $data, $filename, $mimeType, $timestamp = null);
 
@@ -105,6 +120,9 @@ interface BlobStore
    * @param string $md5   The MD5 hash.
    *
    * @return \array[]
+   *
+   * @api
+   * @since 1.0.0
    */
   public function searchByMd5($cmpId, $md5);
 
