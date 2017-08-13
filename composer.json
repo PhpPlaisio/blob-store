@@ -1,9 +1,8 @@
 {
   "name": "setbased/abc-blob-store",
-  "description": "ABC-Framework: BLOB Store Interface",
+  "description": "ABC-Framework: BLOB Store",
   "keywords": [
-    "ABC",
-    "Framework",
+    "ABC-Framework",
     "BLOB",
     "Store"
   ],
