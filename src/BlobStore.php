@@ -12,7 +12,6 @@ interface BlobStore
   /**
    * Removes a BLOB.
    *
-   * @param int $cmpId The ID of the company.
    * @param int $blbId The ID of the BLOB.
    *
    * @return void
@@ -20,7 +19,7 @@ interface BlobStore
    * @api
    * @since 1.0.0
    */
-  public function delBlob($cmpId, $blbId);
+  public function delBlob($blbId);
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
@@ -35,7 +34,6 @@ interface BlobStore
    * <li> blb_data      The BLOB (i.e. the actual data).
    * </ul>
    *
-   * @param int $cmpId The ID of the company.
    * @param int $blbId The ID of the BLOB.
    *
    * @return array
@@ -43,7 +41,7 @@ interface BlobStore
    * @api
    * @since 1.0.0
    */
-  public function getBlob($cmpId, $blbId);
+  public function getBlob($blbId);
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
@@ -57,7 +55,6 @@ interface BlobStore
    * <li> blb_timestamp The timestamp (the insert or last modified time) of the BLOB according to ISO 8601.
    * </ul>
    *
-   * @param int $cmpId The ID of the company.
    * @param int $blbId The ID of the BLOB.
    *
    * @return array
@@ -65,13 +62,12 @@ interface BlobStore
    * @api
    * @since 1.0.0
    */
-  public function getMetadata($cmpId, $blbId);
+  public function getMetadata($blbId);
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
    * Stores a file as a BLOB and returns the ID of the BLOB.
    *
-   * @param int         $cmpId     The ID of the company.
    * @param string      $path      The path to the file (i.e. the actual data).
    * @param string      $filename  The filename to be stored with the BLOB.
    * @param string|null $mimeType  The mime type of the BLOB. If null this method will determine the mime type.
@@ -83,13 +79,12 @@ interface BlobStore
    * @api
    * @since 1.0.0
    */
-  public function putFile($cmpId, $path, $filename, $mimeType = null, $timestamp = null);
+  public function putFile($path, $filename, $mimeType = null, $timestamp = null);
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
    * Stores a string as a BLOB and returns the ID of the BLOB.
    *
-   * @param int         $cmpId     The ID of the company.
    * @param string      $data      The string (i.e. the actual data).
    * @param string      $filename  The filename to be stored with the BLOB.
    * @param string      $mimeType  The mime type of the BLOB.
@@ -101,7 +96,7 @@ interface BlobStore
    * @api
    * @since 1.0.0
    */
-  public function putString($cmpId, $data, $filename, $mimeType, $timestamp = null);
+  public function putString($data, $filename, $mimeType, $timestamp = null);
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
@@ -116,15 +111,14 @@ interface BlobStore
    * <li> blb_timestamp The timestamp (the insert or last modified time) of the BLOB according to ISO 8601.
    * </ul>
    *
-   * @param int    $cmpId The ID of the company.
-   * @param string $md5   The MD5 hash.
+   * @param string $md5 The MD5 hash.
    *
    * @return \array[]
    *
    * @api
    * @since 1.0.0
    */
-  public function searchByMd5($cmpId, $md5);
+  public function searchByMd5($md5);
 
   //--------------------------------------------------------------------------------------------------------------------
 }
