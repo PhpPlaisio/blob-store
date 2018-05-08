@@ -113,7 +113,7 @@ interface BlobStore
    *
    * @param string $md5 The MD5 hash.
    *
-   * @return \array[]
+   * @return array[]
    *
    * @api
    * @since 1.0.0
