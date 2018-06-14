@@ -1,8 +1,7 @@
 <?php
-//----------------------------------------------------------------------------------------------------------------------
+
 namespace SetBased\Abc\BlobStore;
 
-//----------------------------------------------------------------------------------------------------------------------
 /**
  * Interface for storing and retrieving BLOBs.
  */
@@ -19,7 +18,7 @@ interface BlobStore
    * @api
    * @since 1.0.0
    */
-  public function delBlob($blbId);
+  public function delBlob(int $blbId): void;
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
@@ -41,7 +40,7 @@ interface BlobStore
    * @api
    * @since 1.0.0
    */
-  public function getBlob($blbId);
+  public function getBlob(int $blbId): array;
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
@@ -62,7 +61,7 @@ interface BlobStore
    * @api
    * @since 1.0.0
    */
-  public function getMetadata($blbId);
+  public function getMetadata(int $blbId): array;
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
@@ -79,7 +78,7 @@ interface BlobStore
    * @api
    * @since 1.0.0
    */
-  public function putFile($path, $filename, $mimeType = null, $timestamp = null);
+  public function putFile(string $path, string $filename, ?string $mimeType = null, ?string $timestamp = null): int;
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
@@ -96,11 +95,11 @@ interface BlobStore
    * @api
    * @since 1.0.0
    */
-  public function putString($data, $filename, $mimeType, $timestamp = null);
+  public function putString(string $data, string $filename, string $mimeType, ?string $timestamp = null): int;
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Returns the meta data of all BLOBs that have a certain MD5 hash. Each entry of the returned array is an array with
+   * Returns the metadata of all BLOBs that have a certain MD5 hash. Each entry of the returned array is an array with
    * the following keys:
    * <ul>
    * <li> blb_id        The ID of the BLOB.
@@ -118,7 +117,7 @@ interface BlobStore
    * @api
    * @since 1.0.0
    */
-  public function searchByMd5($md5);
+  public function searchByMd5(string $md5): array;
 
   //--------------------------------------------------------------------------------------------------------------------
 }
