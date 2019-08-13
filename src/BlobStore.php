@@ -66,11 +66,37 @@ interface BlobStore
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
+   * Returns the mime type of a file.
+   *
+   * @param string $path the path to the file.
+   *
+   * @return string
+   *
+   * @api
+   * @since 2.0.0
+   */
+  public function mimeTypePath(string $path): string;
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Returns the mime type of a string.
+   *
+   * @param string $data The string (i.e. the actual data).
+   *
+   * @return string
+   *
+   * @api
+   * @since 2.0.0
+   */
+  public function mimeTypeString(string $data): string;
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
    * Stores a file as a BLOB and returns the ID of the BLOB.
    *
    * @param string      $path      The path to the file (i.e. the actual data).
    * @param string      $filename  The filename to be stored with the BLOB.
-   * @param string|null $mimeType  The mime type of the BLOB. If null this method will determine the mime type.
+   * @param string|null $mimeType  The mime type of the BLOB. If null the mime type will determined automatically.
    * @param string|null $timestamp The creation or last modification time of the BLOB. If null the current timestamp
    *                               will be used.
    *
@@ -87,7 +113,7 @@ interface BlobStore
    *
    * @param string      $data      The string (i.e. the actual data).
    * @param string      $filename  The filename to be stored with the BLOB.
-   * @param string      $mimeType  The mime type of the BLOB.
+   * @param string|null $mimeType  The mime type of the BLOB. If null the mime type will determined automatically.
    * @param string|null $timestamp The creation or last modification time of the BLOB. If null the current timestamp
    *                               will be used.
    *
@@ -96,7 +122,7 @@ interface BlobStore
    * @api
    * @since 1.0.0
    */
-  public function putString(string $data, string $filename, string $mimeType, ?string $timestamp = null): int;
+  public function putString(string $data, string $filename, ?string $mimeType = null, ?string $timestamp = null): int;
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
