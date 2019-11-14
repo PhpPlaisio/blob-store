@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace SetBased\Abc\BlobStore;
+namespace Plaisio\BlobStore;
 
 /**
  * Interface for storing and retrieving BLOBs.

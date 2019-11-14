@@ -1,19 +1,18 @@
 {
-  "name": "setbased/abc-blob-store",
-  "description": "ABC-Framework: BLOB Store",
+  "name": "plaisio/blob-store",
+  "description": "PhpPlaisio: BLOB Store",
   "keywords": [
-    "ABC-Framework",
+    "PhpPlaisio",
     "BLOB",
     "Store"
   ],
-  "type": "library",
   "license": "MIT",
   "require": {
     "php": ">=7.1.0"
   },
   "autoload": {
     "psr-4": {
-      "SetBased\\Abc\\BlobStore\\": "src/"
+      "Plaisio\\BlobStore\\": "src/"
     }
   }
 }
