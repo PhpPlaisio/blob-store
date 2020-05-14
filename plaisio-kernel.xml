@@ -1,0 +1,9 @@
+<kernel>
+    <properties>
+        <property>
+            <type>\Plaisio\BlobStore\BlobStore</type>
+            <name>blobStore</name>
+            <description>The BLOB store object.</description>
+        </property>
+    </properties>
+</kernel>
