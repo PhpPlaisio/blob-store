@@ -2,7 +2,7 @@
     <properties>
         <property>
             <type>\Plaisio\BlobStore\BlobStore</type>
-            <name>blobStore</name>
+            <name>blob</name>
             <description>The BLOB store object.</description>
         </property>
     </properties>
